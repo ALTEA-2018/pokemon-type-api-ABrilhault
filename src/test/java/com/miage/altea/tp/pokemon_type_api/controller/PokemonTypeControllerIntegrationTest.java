@@ -33,7 +33,7 @@ public class PokemonTypeControllerIntegrationTest {
 	}
 
 	@Test
-	void getPokemon_withId25_ShouldReturnPikachu() throws Exception {
+	void getPokemon_withId25_ShouldReturnPikachu() {
 		var url = "http://localhost:" + port + "/pokemon-types/25";
 
 		var pikachu = this.restTemplate.getForObject(url, PokemonType.class);

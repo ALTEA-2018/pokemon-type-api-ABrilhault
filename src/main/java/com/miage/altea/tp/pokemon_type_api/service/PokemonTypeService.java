@@ -7,4 +7,5 @@ import com.miage.altea.tp.pokemon_type_api.bo.PokemonType;
 public interface PokemonTypeService {
 	PokemonType getPokemonType(int id);
 	List<PokemonType> getAllPokemonTypes();
+	PokemonType getPokemonTypeByName(String name);
 }
