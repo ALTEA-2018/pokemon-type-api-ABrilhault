@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,7 +18,7 @@ public class PokemonTypeRepositoryImpl
 
 	public PokemonTypeRepositoryImpl() {
 		try {
-			var pokemonsStream = this.getClass().getResourceAsStream("/pokemons.json");
+			var pokemonsStream = new ClassPathResource("pokemons.json").getInputStream();
 
 			var objectMapper = new ObjectMapper();
 			var pokemonsArray = objectMapper.readValue(pokemonsStream, PokemonType[].class);
@@ -43,5 +44,6 @@ public class PokemonTypeRepositoryImpl
 	public List<PokemonType> findAllPokemonType() {
 		return this.pokemons;
 	}
+
 
 }

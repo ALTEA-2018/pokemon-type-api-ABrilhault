@@ -44,4 +44,6 @@ public class PokemonTypeControllerIntegrationTest {
 		assertEquals(4, pikachu.getHeight());
 	}
 
+
+
 }

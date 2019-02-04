@@ -34,4 +34,5 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
 		return pokemonTypeRepository.findAllPokemonType();
 	}
 
+
 }
