@@ -32,7 +32,8 @@ public class TranslationRepositoryImpl implements TranslationRepository {
 
 			this.translations = Map.of(
 					Locale.FRENCH, List.of(frenchTranslationsArray),
-					Locale.ENGLISH, List.of(englishTranslationsArray)
+					Locale.ENGLISH, List.of(englishTranslationsArray),
+					Locale.US, List.of(englishTranslationsArray)
 			);
 
 			this.defaultTranslations = List.of(englishTranslationsArray);
