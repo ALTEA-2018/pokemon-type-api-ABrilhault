@@ -1,5 +1,6 @@
 package com.miage.altea.tp.pokemon_type_api.service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -53,8 +54,9 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
 	@Override
 	public List<PokemonType> getAllPokemonTypes(){
 		Locale locale = LocaleContextHolder.getLocale();
-		return pokemonTypeRepository.findAllPokemonType().stream().map(t -> {t.setName(translationRepository.getPokemonName(t.getId(), locale)); return t;}).collect(
-				Collectors.toList());
+		return pokemonTypeRepository.findAllPokemonType().stream().map(t -> {t.setName(translationRepository.getPokemonName(t.getId(), locale)); return t;})
+				.sorted(Comparator.comparing(PokemonType::getId))
+				.collect(Collectors.toList());
 	}
 
 	public PokemonTypeRepository getPokemonTypeRepository() {
